@@ -12,11 +12,20 @@
 
 /* stylelint-disable no-empty-source */
 :root, .dropin-design {
-  /* Adobe Commerce Dropin design tokens */
-  --color-brand-300: #6d6d6d;
-  --color-brand-500: #454545;
-  --color-brand-600: #383838;
-  --color-brand-700: #2b2b2b;
+  /* Gold Collagen Design Tokens */
+  --color-gold-100: #fdf7e9;
+  --color-gold-200: #f9e9c8;
+  --color-gold-300: #e6c17a;
+  --color-gold-400: #d4a855;
+  --color-gold-500: #c19450;
+  --color-gold-600: #b8873f;
+  --color-gold-700: #9a6d2b;
+  
+  /* Updated brand colors */
+  --color-brand-300: #c19450;
+  --color-brand-500: #b8873f;
+  --color-brand-600: #9a6d2b;
+  --color-brand-700: #1a1a1a;
   --color-neutral-50: #fff;
   --color-neutral-100: #fafafa;
   --color-neutral-200: #f5f5f5;
@@ -25,8 +34,8 @@
   --color-neutral-500: #b8b8b8;
   --color-neutral-600: #8f8f8f;
   --color-neutral-700: #666;
-  --color-neutral-800: #3d3d3d;
-  --color-neutral-900: #292929;
+  --color-neutral-800: #2a2a2a;
+  --color-neutral-900: #1a1a1a;
   --color-positive-200: #eff5ef;
   --color-positive-500: #7fb078;
   --color-positive-800: #53824c;
@@ -39,11 +48,11 @@
   --color-alert-200: #ffebeb;
   --color-alert-500: #db7070;
   --color-alert-800: #c35050;
-  --color-button-active: var(--color-brand-700);
-  --color-button-focus: var(--color-neutral-400);
-  --color-button-hover: var(--color-brand-600);
+  --color-button-active: var(--color-gold-700);
+  --color-button-focus: var(--color-gold-300);
+  --color-button-hover: var(--color-gold-600);
   --color-action-button-active: var(--color-neutral-50);
-  --color-action-button-hover: var(--color-neutral-300);
+  --color-action-button-hover: var(--color-gold-200);
   --color-opacity-16: rgb(255 255 255 / 16%);
   --color-opacity-24: rgb(255 255 255 / 24%);
   --grid-1-columns: 4;
@@ -275,15 +284,16 @@ button {
 
 /* links */
 a:not(.dropin-design a) {
-  color: var(--color-brand-500);
+  color: var(--color-gold-600);
   font: var(--type-body-1-strong-font);
   letter-spacing: var(--type-body-1-strong-letter-spacing);
   text-decoration: none;
   overflow-wrap: break-word;
+  transition: color 0.3s ease;
 }
 
 a:not(.dropin-design a):hover {
-  color: var(--color-brand-600);
+  color: var(--color-gold-700);
   text-decoration: underline;
 }
 
@@ -294,30 +304,36 @@ button.button {
   display: inline-block;
   max-width: 100%;
   margin: var(--spacing-small) 0;
-  border: var(--shape-border-width-3) solid transparent;
-  border-radius: var(--shape-border-radius-3);
-  padding: 0.5em 1.2em;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  padding: 0.75em 1.5em;
   font: var(--type-button-2-font);
   letter-spacing: var(--type-button-2-letter-spacing);
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: var(--color-brand-500);
+  background-color: var(--color-neutral-900);
   color: var(--color-neutral-50);
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.875rem;
 }
 
 main a.button:hover,
 main a.button:focus,
 button.button:hover,
 button.button:focus {
-  background-color: var(--color-brand-600);
+  background-color: var(--color-gold-600);
+  color: var(--color-neutral-50);
   cursor: pointer;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgb(0 0 0 / 15%);
 }
 
 main a.button.disabled,
@@ -325,18 +341,35 @@ button.button:disabled,
 button.button:disabled:hover {
   background-color: var(--color-neutral-300);
   cursor: unset;
+  transform: none;
 }
 
 main a.button.secondary,
 button.button.secondary {
   background-color: unset;
-  border: var(--shape-border-width-3) solid currentcolor;
-  color: var(--color-brand-500);
+  border: 2px solid var(--color-gold-600);
+  color: var(--color-gold-600);
 }
 
 main a.button.secondary:hover,
 button.button.secondary:hover {
-  color: var(--color-brand-600);
+  background-color: var(--color-gold-600);
+  color: var(--color-neutral-50);
+  border-color: var(--color-gold-600);
+}
+
+/* Gold Primary Button */
+main a.button.gold,
+button.button.gold {
+  background-color: var(--color-gold-500);
+  color: var(--color-neutral-900);
+  font-weight: 700;
+}
+
+main a.button.gold:hover,
+button.button.gold:hover {
+  background-color: var(--color-gold-600);
+  color: var(--color-neutral-50);
 }
 
 main input:hover {
@@ -408,6 +441,28 @@ main .section.highlight {
   background-color: var(--color-neutral-100);
   margin: 0;
   padding: var(--spacing-xbig) 0;
+}
+
+main .section.gold-accent {
+  background: linear-gradient(135deg, var(--color-gold-100) 0%, var(--color-neutral-50) 100%);
+  margin: 0;
+  padding: var(--spacing-xbig) 0;
+}
+
+main .section.dark {
+  background-color: var(--color-neutral-900);
+  color: var(--color-neutral-50);
+  margin: 0;
+  padding: var(--spacing-xbig) 0;
+}
+
+main .section.dark h1,
+main .section.dark h2,
+main .section.dark h3,
+main .section.dark h4,
+main .section.dark h5,
+main .section.dark h6 {
+  color: var(--color-neutral-50);
 }
 
 /* Base Design System Tokens */

@@ -3,6 +3,23 @@
   grid-template-columns: repeat(var(--grid-1-columns), 1fr);
   grid-column-gap: var(--grid-1-gutters);
   margin-top: var(--spacing-medium);
+  position: relative;
+}
+
+/* Product Badge */
+.product-details__badge {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  background: var(--color-gold-500);
+  color: var(--color-neutral-900);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 1;
 }
 
 .product-details__left-column {
@@ -27,16 +44,74 @@
   margin-bottom: var(--spacing-medium);
 }
 
+.product-details__header h1 {
+  color: var(--color-neutral-900);
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.product-details__header .product-subtitle {
+  color: var(--color-gold-600);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+/* Product Rating */
+.product-details__rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.product-details__rating .stars {
+  color: var(--color-gold-500);
+  font-size: 1.125rem;
+}
+
+.product-details__rating .rating-count {
+  color: var(--color-neutral-600);
+  font-size: 0.875rem;
+}
+
 .product-details__price {
   margin-top: var(--spacing-medium);
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--color-gold-100) 0%, transparent 100%);
+  border-radius: 8px;
+  border-left: 4px solid var(--color-gold-500);
+}
+
+.product-details__price .dropin-price {
+  color: var(--color-neutral-900);
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.product-details__price .price-per-bottle {
+  color: var(--color-gold-600);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: 0.25rem;
 }
 
 .product-details__gallery .pdp-carousel {
   max-height: 60vh;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .product-details__gallery .pdp-carousel--thumbnailsRow {
   max-height: 80vh;
+}
+
+.product-details__gallery img {
+  border-radius: 8px;
 }
 
 .product-details__gallery .pdp-overlay__content .pdp-carousel,
@@ -67,8 +142,137 @@
   display: contents;
 }
 
+/* Add to Cart Button */
+.product-details__buttons .dropin-button--primary {
+  background: var(--color-neutral-900);
+  color: var(--color-neutral-50);
+  border: none;
+  border-radius: 4px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-details__buttons .dropin-button--primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgb(193 148 80 / 30%), transparent);
+  transition: left 0.5s ease;
+}
+
+.product-details__buttons .dropin-button--primary:hover::before {
+  left: 100%;
+}
+
+.product-details__buttons .dropin-button--primary:hover {
+  background: var(--color-gold-600);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgb(193 148 80 / 30%);
+}
+
+/* Wishlist Button */
+.product-details__buttons .dropin-button--tertiary {
+  color: var(--color-gold-600);
+  border: 2px solid var(--color-gold-600);
+  background: transparent;
+  border-radius: 4px;
+  padding: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.product-details__buttons .dropin-button--tertiary:hover {
+  background: var(--color-gold-600);
+  color: var(--color-neutral-50);
+  transform: scale(1.05);
+}
+
 .product-details__attributes {
   margin-top: var(--spacing-xsmall);
+}
+
+/* Product Benefits Section */
+.product-benefits {
+  background: var(--color-neutral-50);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 5%);
+}
+
+.product-benefits h3 {
+  color: var(--color-gold-600);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product-benefits ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-benefits li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--color-neutral-700);
+  line-height: 1.6;
+}
+
+.product-benefits li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-gold-500);
+  font-weight: 700;
+}
+
+/* Key Ingredients */
+.product-ingredients {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.ingredient-item {
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--color-gold-100) 0%, var(--color-neutral-50) 100%);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.ingredient-item:hover {
+  transform: translateY(-4px);
+}
+
+.ingredient-amount {
+  color: var(--color-gold-600);
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.ingredient-name {
+  color: var(--color-neutral-800);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 @media (min-width: 900px) {

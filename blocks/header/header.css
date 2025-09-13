@@ -4,6 +4,37 @@
   --desktop-large-panel-width: 900px;
   --desktop-panel-min-height: 200px;
   --desktop-panel-max-height: 600px;
+  --announcement-bar-height: 3.6rem;
+}
+
+/* Announcement Bar */
+.announcement-bar {
+  background-color: var(--color-neutral-900);
+  color: var(--color-neutral-50);
+  text-align: center;
+  padding: 0.8rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--announcement-bar-height);
+}
+
+.announcement-bar::before {
+  content: '✨';
+  margin-right: 0.5rem;
+}
+
+.announcement-bar strong {
+  color: var(--color-gold-400);
+  font-weight: 700;
 }
 
 /* header and nav layout */
@@ -12,7 +43,9 @@ header .nav-wrapper {
   width: 100%;
   z-index: 3;
   position: fixed;
-  border-bottom: 1px solid var(--color-neutral-300);
+  top: var(--announcement-bar-height);
+  border-bottom: 2px solid var(--color-gold-300);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 5%);
 }
 
 header nav {
@@ -152,6 +185,8 @@ header nav .nav-brand a {
   font: var(--type-headline-1-font);
   letter-spacing: var(--type-headline-1-letter-spacing);
   font-weight: bold;
+  color: var(--color-gold-600);
+  transition: color 0.3s ease;
 }
 
 li.nav-drop img {
@@ -187,13 +222,21 @@ header nav .nav-sections ul {
   padding-left: 0;
 }
 
+header nav .nav-brand a:hover {
+  color: var(--color-gold-700);
+  text-decoration: none;
+}
+
 header nav .nav-sections ul > li,
 header nav .nav-sections ul > li > a {
   font: var(--type-body-2-strong-font);
   letter-spacing: var(--type-body-2-strong-letter-spacing);
+  color: var(--color-neutral-800);
+  transition: color 0.3s ease;
 }
 
-header nav .nav-brand a:hover {
+header nav .nav-sections ul > li > a:hover {
+  color: var(--color-gold-600);
   text-decoration: none;
 }
 
@@ -307,7 +350,8 @@ header nav .nav-sections ul > li:empty {
 
   header nav .nav-sections .default-content-wrapper > ul > li:hover,
   header nav .nav-sections .nav-drop[aria-expanded='true'] {
-    background-color: var(--color-neutral-200);
+    background-color: var(--color-gold-100);
+    border-radius: 4px;
   }
 }
 
@@ -315,13 +359,15 @@ header nav .nav-sections ul > li:empty {
 header nav .nav-tools-panel {
   z-index: 100;
   position: absolute;
-  box-shadow: var(--shape-shadow-2);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
   background: var(--background-color);
   top: var(--nav-height);
   right: 0;
   width: 100%;
   display: none;
   box-sizing: border-box;
+  border: 1px solid var(--color-gold-200);
+  border-radius: 4px;
 }
 
 header nav .nav-tools-panel--show {
@@ -339,13 +385,20 @@ header nav .nav-tools {
 }
 
 header nav .nav-tools-wrapper > button {
-  color: var(--color-brand-700);
+  color: var(--color-neutral-800);
   background: transparent;
   padding: 10px;
   border: unset;
   cursor: pointer;
   height: 40px;
   width: 40px;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+header nav .nav-tools-wrapper > button:hover {
+  background-color: var(--color-gold-100);
+  transform: scale(1.1);
 }
 
 header nav .nav-tools button.nav-cart-button {
@@ -360,8 +413,8 @@ header nav .nav-tools button.nav-cart-button[data-count]::after {
   position: absolute;
   top: 0;
   right: -2px;
-  background-color: var(--color-brand-700);
-  color: var(--color-neutral-100);
+  background-color: var(--color-gold-600);
+  color: var(--color-neutral-50);
   border-radius: 50%;
   width: 1.75em;
   height: 1.75em;
@@ -369,6 +422,7 @@ header nav .nav-tools button.nav-cart-button[data-count]::after {
   align-items: center;
   font-size: 0.8em;
   justify-content: center;
+  font-weight: 700;
 }
 
 header nav .nav-tools button.nav-wishlist-button {

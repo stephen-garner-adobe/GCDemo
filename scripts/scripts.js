@@ -20,6 +20,7 @@ import {
   decorateLinks,
   loadErrorPage,
 } from './commerce.js';
+import decorateAnnouncementBar from '../blocks/header/announcement-bar.js';
 
 /**
  * Builds hero block and prepends to main in a new section.
@@ -93,6 +94,7 @@ async function loadEager(doc) {
       loadErrorPage(418);
     }
     document.body.classList.add('appear');
+    decorateAnnouncementBar(); // Add announcement bar
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }
 
