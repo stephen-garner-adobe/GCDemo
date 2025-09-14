@@ -1,0 +1,406 @@
+/* Wellness & Beauty Enhancements for Gold Collagen Theme */
+
+/* Trust Badges Section */
+.trust-badges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--color-gold-100) 0%, var(--color-neutral-50) 100%);
+  border-radius: 8px;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+}
+
+.trust-badge {
+  text-align: center;
+  flex: 0 1 150px;
+}
+
+.trust-badge-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 0.75rem;
+  background: var(--color-gold-500);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-neutral-50);
+  font-size: 1.5rem;
+}
+
+.trust-badge-title {
+  color: var(--color-neutral-900);
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+
+.trust-badge-description {
+  color: var(--color-neutral-600);
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 3rem 0;
+  background: var(--color-neutral-50);
+}
+
+.testimonial-card {
+  background: var(--color-neutral-50);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 8%);
+  margin: 1rem;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
+}
+
+.testimonial-quote {
+  color: var(--color-neutral-700);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.testimonial-quote::before {
+  content: '"';
+  color: var(--color-gold-500);
+  font-size: 3rem;
+  line-height: 0;
+  vertical-align: -0.8rem;
+  margin-right: 0.25rem;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.testimonial-author-name {
+  color: var(--color-neutral-900);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.testimonial-rating {
+  color: var(--color-gold-500);
+  font-size: 0.875rem;
+}
+
+/* Before/After Comparison */
+.before-after {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 3rem 0;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--color-neutral-50) 0%, var(--color-gold-100) 100%);
+  border-radius: 12px;
+}
+
+.before-after-item {
+  text-align: center;
+}
+
+.before-after-label {
+  color: var(--color-neutral-700);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.before-after-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+}
+
+/* Clinical Results */
+.clinical-results {
+  padding: 3rem 2rem;
+  background: var(--color-neutral-900);
+  color: var(--color-neutral-50);
+  border-radius: 12px;
+  margin: 3rem 0;
+}
+
+.clinical-results h3 {
+  color: var(--color-gold-400);
+  text-align: center;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.result-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgb(193 148 80 / 10%);
+  border-radius: 8px;
+  border: 1px solid var(--color-gold-600);
+}
+
+.result-percentage {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-gold-400);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.result-description {
+  color: var(--color-neutral-200);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+/* Subscription Benefits */
+.subscription-benefits {
+  background: linear-gradient(135deg, var(--color-gold-200) 0%, var(--color-neutral-50) 100%);
+  border-radius: 12px;
+  padding: 2.5rem;
+  margin: 3rem 0;
+  border: 2px solid var(--color-gold-400);
+}
+
+.subscription-benefits h3 {
+  color: var(--color-neutral-900);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.benefits-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+}
+
+.benefit-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--color-gold-500);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-neutral-50);
+  flex-shrink: 0;
+}
+
+.benefit-text {
+  color: var(--color-neutral-800);
+  line-height: 1.5;
+}
+
+/* Age Range Selector */
+.age-selector {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.age-option {
+  padding: 1rem 2rem;
+  background: var(--color-neutral-50);
+  border: 2px solid var(--color-gold-300);
+  border-radius: 24px;
+  color: var(--color-neutral-800);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.age-option:hover,
+.age-option.active {
+  background: var(--color-gold-500);
+  color: var(--color-neutral-50);
+  border-color: var(--color-gold-600);
+  transform: scale(1.05);
+}
+
+/* Ingredients Showcase */
+.ingredients-showcase {
+  padding: 3rem 0;
+}
+
+.ingredient-card {
+  background: var(--color-neutral-50);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 5%);
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.ingredient-card:hover {
+  border-color: var(--color-gold-400);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgb(193 148 80 / 15%);
+}
+
+.ingredient-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, var(--color-gold-300) 0%, var(--color-gold-500) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-neutral-50);
+  font-size: 2rem;
+}
+
+.ingredient-name {
+  color: var(--color-neutral-900);
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.ingredient-benefit {
+  color: var(--color-neutral-600);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+/* Usage Instructions */
+.usage-instructions {
+  background: var(--color-neutral-900);
+  color: var(--color-neutral-50);
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+.usage-step {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.step-number {
+  width: 32px;
+  height: 32px;
+  background: var(--color-gold-500);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-neutral-900);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.step-text {
+  color: var(--color-neutral-200);
+  line-height: 1.6;
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer-effect {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(193 148 80 / 20%),
+    transparent
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .trust-badges {
+    gap: 1.5rem;
+  }
+  
+  .before-after {
+    grid-template-columns: 1fr;
+  }
+  
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .clinical-results {
+    padding: 2rem 1rem;
+  }
+  
+  .age-selector {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .age-option {
+    width: 200px;
+    text-align: center;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus States for Accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-gold-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Print Styles */
+@media print {
+  .trust-badges,
+  .testimonials,
+  .subscription-benefits {
+    display: none;
+  }
+}

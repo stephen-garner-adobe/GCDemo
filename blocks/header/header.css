@@ -222,17 +222,17 @@ header nav .nav-sections ul {
   padding-left: 0;
 }
 
-header nav .nav-brand a:hover {
-  color: var(--color-gold-700);
-  text-decoration: none;
-}
-
 header nav .nav-sections ul > li,
 header nav .nav-sections ul > li > a {
   font: var(--type-body-2-strong-font);
   letter-spacing: var(--type-body-2-strong-letter-spacing);
   color: var(--color-neutral-800);
   transition: color 0.3s ease;
+}
+
+header nav .nav-brand a:hover {
+  color: var(--color-gold-700);
+  text-decoration: none;
 }
 
 header nav .nav-sections ul > li > a:hover {
